@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="004-insert-sample-data" author="bookreviewer">
+        <!-- Insert sample users -->
+        <insert tableName="users">
+            <column name="username" value="john_doe"/>
+            <column name="email" value="john@example.com"/>
+        </insert>
+        
+        <insert tableName="users">
+            <column name="username" value="jane_smith"/>
+            <column name="email" value="jane@example.com"/>
+        </insert>
+        
+        <insert tableName="users">
+            <column name="username" value="mike_wilson"/>
+            <column name="email" value="mike@example.com"/>
+        </insert>
+        
+        <!-- Insert sample books -->
+        <insert tableName="book">
+            <column name="title" value="El Señor de los Anillos"/>
+            <column name="author" value="J.R.R. Tolkien"/>
+        </insert>
+        
+        <insert tableName="book">
+            <column name="title" value="1984"/>
+            <column name="author" value="George Orwell"/>
+        </insert>
+        
+        <insert tableName="book">
+            <column name="title" value="Cien años de soledad"/>
+            <column name="author" value="Gabriel García Márquez"/>
+        </insert>
+        
+        <insert tableName="book">
+            <column name="title" value="Don Quijote de la Mancha"/>
+            <column name="author" value="Miguel de Cervantes"/>
+        </insert>
+        
+        <insert tableName="book">
+            <column name="title" value="Harry Potter y la piedra filosofal"/>
+            <column name="author" value="J.K. Rowling"/>
+        </insert>
+        
+        <!-- Insert sample reviews -->
+        <insert tableName="review">
+            <column name="rating" value="5"/>
+            <column name="comment" value="Una obra maestra de la fantasía épica. Tolkien creó un mundo increíblemente detallado."/>
+            <column name="user_id" value="1"/>
+            <column name="book_id" value="1"/>
+        </insert>
+        
+        <insert tableName="review">
+            <column name="rating" value="4"/>
+            <column name="comment" value="Una distopía muy bien escrita que sigue siendo relevante hoy en día."/>
+            <column name="user_id" value="2"/>
+            <column name="book_id" value="2"/>
+        </insert>
+        
+        <insert tableName="review">
+            <column name="rating" value="5"/>
+            <column name="comment" value="Magia realista en su máxima expresión. García Márquez es un genio."/>
+            <column name="user_id" value="1"/>
+            <column name="book_id" value="3"/>
+        </insert>
+        
+        <insert tableName="review">
+            <column name="rating" value="4"/>
+            <column name="comment" value="El clásico por excelencia de la literatura española."/>
+            <column name="user_id" value="3"/>
+            <column name="book_id" value="4"/>
+        </insert>
+        
+        <insert tableName="review">
+            <column name="rating" value="5"/>
+            <column name="comment" value="El inicio de una saga mágica que marcó mi infancia."/>
+            <column name="user_id" value="2"/>
+            <column name="book_id" value="5"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog> 
