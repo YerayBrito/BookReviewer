@@ -124,10 +124,12 @@ const user = ref<User | null>(null)
 const userReviews = ref<Review[]>([])
 const loading = ref(true)
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const emit = defineEmits<{
   browseBooks: []
 }>()
 
+ 
 const averageRating = computed(() => {
   if (userReviews.value.length === 0) return 0
   const sum = userReviews.value.reduce((acc, review) => acc + review.rating, 0)

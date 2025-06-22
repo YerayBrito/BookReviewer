@@ -110,7 +110,7 @@ const fetchBooks = async () => {
       books.value = response.data
     }
   } catch (err) {
-    error.value = 'Network error: Is the backend running?'
+    error.value = `Network error: ${err instanceof Error ? err.message : 'Is the backend running?'}`
   } finally {
     loading.value = false
   }

@@ -5,11 +5,22 @@ import BookDetail from './components/BookDetail.vue'
 import UserProfile from './components/UserProfile.vue'
 import './assets/global.css'
 
+interface Review {
+  id: number
+  rating: number
+  comment?: string
+  user?: {
+    id: number
+    username: string
+    email: string
+  }
+}
+
 interface Book {
   id: number
   title: string
   author: string
-  reviews?: any[]
+  reviews?: Review[]
 }
 
 const currentView = ref<'books' | 'book-detail' | 'profile'>('books')

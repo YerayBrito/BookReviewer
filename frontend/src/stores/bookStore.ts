@@ -50,7 +50,7 @@ export const useBookStore = defineStore('book', () => {
         error.value = 'Failed to load books'
       }
     } catch (err) {
-      error.value = 'Network error: Backend might not be running'
+      error.value = `Network error: ${err instanceof Error ? err.message : 'Backend might not be running'}`
     } finally {
       loading.value = false
     }
@@ -68,7 +68,7 @@ export const useBookStore = defineStore('book', () => {
         error.value = 'Failed to load book details'
       }
     } catch (err) {
-      error.value = 'Network error: Backend might not be running'
+      error.value = `Network error: ${err instanceof Error ? err.message : 'Backend might not be running'}`
     } finally {
       loading.value = false
     }
@@ -99,7 +99,7 @@ export const useBookStore = defineStore('book', () => {
         return false
       }
     } catch (err) {
-      error.value = 'Network error: Backend might not be running'
+      error.value = `Network error: ${err instanceof Error ? err.message : 'Backend might not be running'}`
       return false
     }
   }

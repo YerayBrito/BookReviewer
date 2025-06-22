@@ -191,7 +191,7 @@ const submitReview = async () => {
       emit('reviewSubmitted')
     }
   } catch (error) {
-    alert('Network error: Backend might not be running')
+    alert(`Network error: ${error instanceof Error ? error.message : 'Backend might not be running'}`)
   } finally {
     submitting.value = false
   }

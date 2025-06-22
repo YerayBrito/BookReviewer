@@ -18,15 +18,17 @@ import './commands'
 
 // Import interceptors for direct use
 import * as interceptors from './interceptors'
+import { setupInterceptors } from './interceptors'
 
 // Make interceptors available globally
-Cypress.Commands.add('setupInterceptors', interceptors.setupAll)
+Cypress.Commands.add('setupInterceptors', setupInterceptors.all)
 
 // Type definitions for custom commands
 declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace Cypress {
     interface Chainable {
-      setupInterceptors: typeof interceptors.setupAll
+      setupInterceptors: typeof setupInterceptors.all
       interceptors: typeof interceptors
     }
   }

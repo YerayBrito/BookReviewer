@@ -1,5 +1,17 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import { ref } from 'vue'
+import BookList from '../components/BookList.vue'
+
+const bookSection = ref<HTMLElement>()
+
+const scrollToBooks = () => {
+  bookSection.value?.scrollIntoView({ behavior: 'smooth' })
+}
+
+const handleBookSelection = (book: Book) => {
+  // Handle book selection - could navigate to book detail page
+  console.log('Selected book:', book)
+}
 </script>
 
 <template>
