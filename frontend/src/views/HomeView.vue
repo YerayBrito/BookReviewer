@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import BookList from '../components/BookList.vue'
+import type {Book} from "@/stores/bookStore.ts";
 
 const bookSection = ref<HTMLElement>()
 
@@ -23,10 +24,10 @@ const handleBookSelection = (book: Book) => {
         <div class="text-h5 text-grey-7 q-mb-lg">
           Discover and review your favorite books
         </div>
-        <q-btn 
-          color="primary" 
+        <q-btn
+          color="primary"
           size="lg"
-          label="Browse Books" 
+          label="Browse Books"
           icon="library_books"
           @click="scrollToBooks"
         />
